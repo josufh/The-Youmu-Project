@@ -6,7 +6,6 @@ class Schedule():
         self.fname = fname
         file = open(fname + '.json')
         self.sch = json.load(file)
-        print(self.sch)
         file.close()
 
     def newEvent(self, name, date, notes):
