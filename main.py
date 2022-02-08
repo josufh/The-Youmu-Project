@@ -16,14 +16,30 @@
 #     except sr.UnknownValueError:
 #         print("unknown error occurred")
 
+from schedule import Schedule, Date
+
+sch = Schedule('main')
+name = "Doctor visit"
+date = Date(2022, 2, 15, 17, 45)
+notes = "佐藤メンタルクリニック"
+#sch.newEvent(name, date, notes)
+d = Date(string='2202-2-15 23:27')
+
+exit()
+
 speech = ''
 
 def Listen():
+    return input().lower()
+
+def Call():
     loop = True
     while(loop):
-        cmd_input = input().lower()
-        if(cmd_input.__contains__('youmu')):
+        speech = Listen()
+        if(speech.__contains__('youmu')):
             loop = False
 
-Listen()
-
+while(True):
+    Call()
+    print('Hello Josu, how can I help you?')
+    print(Listen())
